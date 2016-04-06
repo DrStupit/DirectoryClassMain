@@ -5,6 +5,8 @@
  */
 package Model;
 
+import java.util.List;
+import javax.persistence.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -30,5 +32,15 @@ public class hibernateDao {
     public void addCompany(PojoCompany comp){
         session.save(comp);
         session.getTransaction().commit();
+    }
+    
+    public PojoCompany getLogin(String email){
+        org.hibernate.Query query = session.createQuery("from PojoCompany where compemail = :email");
+        query.setParameter("email", email);
+        
+        List<PojoCompany> list = query.list();
+        PojoCompany company = (PojoCompany)list.get(0);
+
+        return company;
     }
 }
