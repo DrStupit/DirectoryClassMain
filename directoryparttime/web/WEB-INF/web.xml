@@ -32,6 +32,14 @@
         <servlet-name>ViewCategoryServlet</servlet-name>
         <servlet-class>Controller.ViewCategoryServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GetByCategoryServlet</servlet-name>
+        <servlet-class>Controller.GetByCategoryServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetCompanyServlet</servlet-name>
+        <servlet-class>Controller.GetCompanyServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddCategoryServlet</servlet-name>
         <url-pattern>/AddCategoryServlet</url-pattern>
@@ -63,6 +71,14 @@
     <servlet-mapping>
         <servlet-name>ViewCategoryServlet</servlet-name>
         <url-pattern>/ViewCategoryServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetByCategoryServlet</servlet-name>
+        <url-pattern>/GetByCategoryServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetCompanyServlet</servlet-name>
+        <url-pattern>/GetCompanyServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
