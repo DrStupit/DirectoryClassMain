@@ -17,12 +17,23 @@
     </head>
     <body>
           <form name="signinForm" method="POST" action="loginServlet">
-             <div class="form-group">
-                 <h2>Sign In</h2>
-                Email: <input type="text" placeholder="Email" name="email" id="email"class="form-control">
-                Password: <input type="text" placeholder="Password" name="pwd" id="pwd" class="form-control">
-                <button type="submit" id="signBtn" class="btn btn-primary">Sign Up</button>
-          </div>
+        <div class="panel panel-primary">
+                <div class="panel-heading">Sign Up or Login</div>
+                 <div class="panel-body">
+                 
+                     <div class="row">
+                         <div class="col-sm-6"><h2><strong>Sign In</strong><span class="glyphicon glyphicon-user"></span></h2>
+                            
+                            <div class="form-group">
+                            
+                            Email: <input type="text" placeholder="Email" name="email" id="email"class="form-control">
+                            Password: <input type="text" placeholder="Password" name="pwd" id="pwd" class="form-control">
+                            <button type="submit" id="signBtn" class="btn btn-primary">Sign In</button>
+                            </div>
+                         </div> 
+                     </div>
+                  </div>
+                </div>
           </form>
     </body>
 </html>

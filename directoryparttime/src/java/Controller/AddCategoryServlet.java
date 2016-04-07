@@ -67,7 +67,7 @@ public class AddCategoryServlet extends HttpServlet {
             hibernateDao dao = new hibernateDao();
             PojoCategory cat = new PojoCategory();
             
-            cat.setCatname("Construction");
+            cat.setCatname("Sales");
             dao.addCategory(cat);
             out.println("<h2>Added</h2>");
             

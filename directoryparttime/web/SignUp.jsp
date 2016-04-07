@@ -16,15 +16,25 @@
         <title>Sign Up</title>
     </head>
     <body>
-        <h1> Register Your Company </h1>
-        <div class="col-sm-6">    
+        
+           
         <form name="regForm" method="POST" action="SignUpServlet">
+             <div class="panel panel-primary">
+                <div class="panel-heading">Register Your Company</div>
+                 <div class="panel-body">
+                 
+                     <div class="row">
+                         <div class="col-sm-6"><h2><strong>Two Simple Details To Fill:</strong><span class="glyphicon glyphicon-update"></span></h2>
+                                         
              <div class="form-group">
                 Email: <input type="text" placeholder="Email" name="email" id="email"class="form-control">
                 Password: <input type="text" placeholder="Password" name="pwd" id="pwd" class="form-control">
                 <button type="submit" id="regBtn" class="btn btn-primary">Sign Up</button>
              </div>
+                         </div>
+                     </div>
+                </div>
         </form>
-        </div>
+       
     </body>
 </html>

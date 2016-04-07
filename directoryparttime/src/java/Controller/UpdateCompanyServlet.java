@@ -95,6 +95,7 @@ public class UpdateCompanyServlet extends HttpServlet {
              dao.updateCompany(name, email, password, contact, address, compID);
              
              out.println("<h2>Company Details Successfully Updated!</h2>");
+             response.sendRedirect("./index.jsp");
     }
 
     /**
