@@ -9,6 +9,7 @@ import Model.PojoCompany;
 import Model.hibernateDao;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -61,13 +62,8 @@ public class loginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-             response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        
-        hibernateDao dao = new hibernateDao();
-        PojoCompany comp = dao.getLogin("kerevreddy@hotmail.com");
-        
-        out.println("<h2>"+comp.getCompname()+"</h2>");
+            
+            
     }
 
     /**
@@ -81,7 +77,20 @@ public class loginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+         response.setContentType("text/html;charset=UTF-8");
+             PrintWriter out = response.getWriter();
+        
+             //hibernateDao dao = new hibernateDao();
+            // PojoCompany comp = dao.getLogin("kerevreddy@hotmail.com");
+            
+             String email = request.getParameter("email");
+             String pwd = request.getParameter("pwd");
+             
+             request.setAttribute("email", email);
+             request.setAttribute("password", pwd);
+             
+             RequestDispatcher rd = request.getRequestDispatcher("./Login.jsp");
+             rd.forward(request, response);
     }
 
     /**
