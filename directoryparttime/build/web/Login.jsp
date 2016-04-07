@@ -26,15 +26,22 @@
             <% hibernateDao dao = new hibernateDao(); 
                PojoCompany company = dao.getLogin(email);
             if (company != null){%>
-            <h2>Welcome Back to Your Profile</h2>
+            <h2>Welcome Back <%=company.getCompname()%></h2>
             
             
             <div id="editLoginBox">
-            <h1>Edit Your Profile</h1>
+           
              <form name="editForm" method="POST" action="UpdateCompanyServlet">
+                  <div class="panel panel-primary">
+                <div class="panel-heading">Edit Your Profile</div>
+                 <div class="panel-body">
+                 
+                     <div class="row">
+                         <div class="col-sm-6"><h2><strong>Update Details</strong><span class="glyphicon glyphicon-update"></span></h2>
+                     
              <div class="form-group">
                  
-                <%String emailU = company.getCompemail();%>
+                <%String emailU = company.getCompemail();%> 
                 <%String passwordU = company.getComppassword();%>
                 <%String nameU = company.getCompname();%>
                 <%String addressU = company.getCompaddress();%>
@@ -50,7 +57,12 @@
                 <input type="hidden" placeholder="Company Name" name="cat" id="cat"class="form-control"value=<%=catID%>>
                 <input type="hidden" class ="form-control" name ="id" id="id" value=<%=compID%>>
                 <button type="submit" id="regBtn" class="btn btn-primary">Update</button>
+                <button type="button" id="homeBtn" onclick="./index.jsp" class="btn btn-primary"><span class="glyphicon glyphicon-home"></span>Home</button>
              </div>
+                </div>
+                </div>
+                </div>
+                </div>
         </form>
         </div>
             

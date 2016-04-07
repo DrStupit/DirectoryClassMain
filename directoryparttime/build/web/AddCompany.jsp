@@ -26,6 +26,13 @@
         <div id="reg1">
             <h1>Edit Your Profile</h1>
              <form name="editForm" method="POST" action="AddCompanyServlet">
+          <div class="panel panel-primary">
+                <div class="panel-heading">Edit Your Profile</div>
+                 <div class="panel-body">
+                 
+                     <div class="row">
+                         <div class="col-sm-6"><h2><strong>Update Details</strong><span class="glyphicon glyphicon-update"></span></h2>
+                     
              <div class="form-group">
                 <%String email = (request.getAttribute("email")).toString();%>
                 <%String pass = (request.getAttribute("password")).toString();%>
@@ -38,6 +45,10 @@
                 Category: <input type="text" placeholder="Company Name" name="cat" id="cat"class="form-control">
                 <button type="submit" id="regBtn" class="btn btn-primary">Sign Up</button>
              </div>
+                 </div>
+                 </div>
+                 </div>
+                 </div>
         </form>
         </div>
     </body>

@@ -6,6 +6,7 @@
 package Model;
 
 import java.math.BigDecimal;
+import static java.util.Collections.list;
 import java.util.List;
 import javax.persistence.Query;
 import org.hibernate.Session;
@@ -43,6 +44,15 @@ public class hibernateDao {
         PojoCompany company = (PojoCompany)list.get(0);
 
         return company;
+    }
+    
+    public List<PojoCategory> getCategory(){
+        org.hibernate.Query query = session.createQuery("from PojoCategory");
+        
+        List<PojoCategory> list = query.list();
+       
+        
+        return list;
     }
     
     public void updateCompany(String name, String email, String password, String contact, String address, int compId){

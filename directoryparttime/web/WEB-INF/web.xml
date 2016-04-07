@@ -28,6 +28,10 @@
         <servlet-name>UpdateCompanyServlet</servlet-name>
         <servlet-class>Controller.UpdateCompanyServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ViewCategoryServlet</servlet-name>
+        <servlet-class>Controller.ViewCategoryServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddCategoryServlet</servlet-name>
         <url-pattern>/AddCategoryServlet</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>UpdateCompanyServlet</servlet-name>
         <url-pattern>/UpdateCompanyServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewCategoryServlet</servlet-name>
+        <url-pattern>/ViewCategoryServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
