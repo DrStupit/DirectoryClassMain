@@ -39,14 +39,16 @@
                 <%String nameU = company.getCompname();%>
                 <%String addressU = company.getCompaddress();%>
                 <%String contactU = company.getCompcontact();%>
-                 <%int catID = company.getCatid();%>
+                <%int catID = company.getCatid();%>
+                <%int compID = company.getCompid();%>
                
                 Email: <input type="text" class ="form-control" name ="email" id="email" value=<%=email%>>
                 Password: <input type="text" class ="form-control" name = "password" id="password" value=<%=passwordU%>>
                 Name: <input type="text" placeholder="Company Name" name="name" id="name"class="form-control"value=<%=nameU%>>
                 Address: <input type="text" placeholder="Company Physical Address" name="address" id="address" class="form-control"value=<%=addressU%>>
                 Contact Number: <input type="text" placeholder="Company Telephone" name="contact" id="contact"class="form-control"value=<%=contactU%>>
-                Category: <input type="text" placeholder="Company Name" name="cat" id="cat"class="form-control"value=<%=catID%>>
+                <input type="hidden" placeholder="Company Name" name="cat" id="cat"class="form-control"value=<%=catID%>>
+                <input type="hidden" class ="form-control" name ="id" id="id" value=<%=compID%>>
                 <button type="submit" id="regBtn" class="btn btn-primary">Update</button>
              </div>
         </form>

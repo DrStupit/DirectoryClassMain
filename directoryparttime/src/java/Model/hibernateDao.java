@@ -5,6 +5,7 @@
  */
 package Model;
 
+import java.math.BigDecimal;
 import java.util.List;
 import javax.persistence.Query;
 import org.hibernate.Session;
@@ -43,4 +44,19 @@ public class hibernateDao {
 
         return company;
     }
+    
+    public void updateCompany(String name, String email, String password, String contact, String address, int compId){
+        org.hibernate.Query query = session.createQuery("update PojoCompany set compname = :Name, compemail = :Email, comppassword = :Password, compcontact = :Contact, compaddress = :Address where compid = :ID");
+        query.setParameter("Email", email);
+        query.setParameter("Password", password);
+        query.setParameter("Name", name);
+        query.setParameter("Contact", contact);
+        query.setParameter("Address", address);
+        query.setParameter("ID", compId);
+        int result = query.executeUpdate();
+
+        session.getTransaction().commit();
+
+    }
+    
 }
