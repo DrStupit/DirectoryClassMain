@@ -19,6 +19,7 @@ public class PojoCompany {
     
     @Id
     private int compid;
+    
     private String compname;
     private String compemail;
     private String comppassword;

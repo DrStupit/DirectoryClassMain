@@ -20,6 +20,14 @@
         <servlet-name>loginServlet</servlet-name>
         <servlet-class>Controller.loginServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UpdateCompanyID</servlet-name>
+        <servlet-class>Controller.UpdateCompanyID</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateCompanyServlet</servlet-name>
+        <servlet-class>Controller.UpdateCompanyServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddCategoryServlet</servlet-name>
         <url-pattern>/AddCategoryServlet</url-pattern>
@@ -39,6 +47,14 @@
     <servlet-mapping>
         <servlet-name>loginServlet</servlet-name>
         <url-pattern>/loginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateCompanyID</servlet-name>
+        <url-pattern>/UpdateCompanyID</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateCompanyServlet</servlet-name>
+        <url-pattern>/UpdateCompanyServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
