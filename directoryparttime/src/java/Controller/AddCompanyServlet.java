@@ -86,16 +86,17 @@ public class AddCompanyServlet extends HttpServlet {
             String email = request.getParameter("email");
             String password = request.getParameter("password");
             String contact = request.getParameter("contact");
+            int catID = Integer.parseInt(request.getParameter("cat"));
             
             comp.setCompname(name);
             comp.setCompemail(email);
             comp.setComppassword(password);
             comp.setCompaddress(address);
             comp.setCompcontact(contact);
-            comp.setCatid(1);
+            comp.setCatid(catID);
             
             dao.addCompany(comp);
-            out.println("<h2>Company Added</h2>");
+            response.sendRedirect("./index.jsp");
     }
 
     /**

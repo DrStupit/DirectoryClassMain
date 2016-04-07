@@ -46,11 +46,30 @@ public class hibernateDao {
         return company;
     }
     
+     public PojoCompany getCompany(int compID){
+        org.hibernate.Query query = session.createQuery("from PojoCompany where compid = :compid");
+        query.setParameter("compid", compID);
+        
+        List<PojoCompany> list = query.list();
+        PojoCompany company = (PojoCompany)list.get(0);
+
+        return company;
+    }
+    
     public List<PojoCategory> getCategory(){
         org.hibernate.Query query = session.createQuery("from PojoCategory");
         
         List<PojoCategory> list = query.list();
        
+        
+        return list;
+    }
+    
+    public List<PojoCompany> getCompanyByID(int catID){
+        org.hibernate.Query query = session.createQuery("from PojoCompany where catid = :catID");
+        query.setParameter("catID", catID);
+        
+        List<PojoCompany> list = query.list();
         
         return list;
     }
