@@ -85,91 +85,23 @@ $("#catBtn").click(function(){
 	    });
                 
 	});
+        
+$("#countryDl").change(function(category){
+        category=$("#countryDl").val();	
+      $.get("./GetByCategoryServlet?Code="+category+"",
+            function(data){$("#companyDl").html(data);});
+                
+	});
+        
+$("#companyDl").change(function(compID){
+        compID=$("#companyDl").val();	
+      $.get("./GetCompanyServlet?Code="+compID+"",
+            function(data){$("#tbl").html(data);});
+                
+	});
 				
 		
 }); 
-
-function viewCompanyByCat(category){
-                var ajaxRequest;  // The variable that makes Ajax possible!
-                    try{
-   
-      // Opera 8.0+, Firefox, Safari
-                        ajaxRequest = new XMLHttpRequest();
-                        }catch (e){
-      
-      // Internet Explorer Browsers
-              try{
-                 ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
-                }catch (e) {
-         
-              try{
-                 ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
-                }catch (e){
-                    // Something went wrong
-            alert("Your browser broke!");
-            return false;
-         }
-      }
-   }
-   
-   // Create a function that will receive data
-   // sent from the server and will update
-   // div section in the same page.
-                    ajaxRequest.onreadystatechange = function(){
-   
-                    if(ajaxRequest.readyState == 4){
-                    var ajaxDisplay = document.getElementById('companyDl');
-                    ajaxDisplay.innerHTML = ajaxRequest.responseText;
-                     }
-                };
-                //var countryName = document.getElementById("countryDl").value;
-                //alert(countryName);
-                //var country = country;
-                ajaxRequest.open("GET", "./GetByCategoryServlet?Code="+category+"", true);
-                //ajaxResponse.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-                ajaxRequest.send(null); 
-}
-
-function viewDetails(compID){
-                var ajaxRequest;  // The variable that makes Ajax possible!
-                    try{
-   
-      // Opera 8.0+, Firefox, Safari
-                        ajaxRequest = new XMLHttpRequest();
-                        }catch (e){
-      
-      // Internet Explorer Browsers
-              try{
-                 ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
-                }catch (e) {
-         
-              try{
-                 ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
-                }catch (e){
-                    // Something went wrong
-            alert("Your browser broke!");
-            return false;
-         }
-      }
-   }
-   
-   // Create a function that will receive data
-   // sent from the server and will update
-   // div section in the same page.
-                    ajaxRequest.onreadystatechange = function(){
-   
-                    if(ajaxRequest.readyState == 4){
-                    var ajaxDisplay = document.getElementById('tbl');
-                    ajaxDisplay.innerHTML = ajaxRequest.responseText;
-                     }
-                };
-                //var countryName = document.getElementById("countryDl").value;
-                //alert(countryName);
-                //var country = country;
-                ajaxRequest.open("GET", "./GetCompanyServlet?Code="+compID+"", true);
-                //ajaxResponse.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-                ajaxRequest.send(null); 
-}
         </script>
         <script src ="http://code.jquery.com/jquery-latest.js"></script>
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -203,13 +135,13 @@ function viewDetails(compID){
                  <div class="panel-body">
                  
                      <div class="row">
-                         <div class="col-sm-6">
+                         <div class="col-sm-12">
                        
                           <div id ="countryBox">
-                            <select  onchange="viewCompanyByCat(this.value)" id="countryDl">
+                            <select id="countryDl">
                                 <option></option>   
                             </select>
-                            <select onchange="viewDetails(this.value)"  id="companyDl">
+                            <select id="companyDl">
                                 <option></option>   
                             </select>
                             <input type="button" value="View"  id="catBtn">
